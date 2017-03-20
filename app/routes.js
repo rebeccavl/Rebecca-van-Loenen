@@ -14,14 +14,32 @@ const loadModule = (cb) => (componentModule) => {
 export default function createRoutes() {
 
   return [
-     {
-      path: '*',
-      name: 'notfound',
+    {
+     path: '/',
+     name: 'Home',
+     getComponent(nextState, cb) {
+       import('containers/Home')
+         .then(loadModule(cb))
+         .catch(errorLoading);
+     },
+   },
+    {
+      path: '/About',
+      name: 'About',
       getComponent(nextState, cb) {
-        import('containers/NotFoundPage')
+        import('containers/About')
           .then(loadModule(cb))
           .catch(errorLoading);
       },
     },
+    {
+    path: '*',
+    name: 'notfound',
+    getComponent(nextState, cb) {
+      import('containers/NotFoundPage')
+        .then(loadModule(cb))
+        .catch(errorLoading);
+    },
+  },
   ];
 }
