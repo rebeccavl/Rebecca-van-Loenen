@@ -15,8 +15,8 @@ export class About extends React.PureComponent {
 
         <header>
           <nav>
-          <Link to= "/"> Home </Link>
-          <Link to= "/About"> About </Link>
+            <Link to= "/"> Home </Link>
+            <Link to= "/About"> About </Link>
           </nav>
         </header>
         <main></main>

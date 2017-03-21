@@ -1,20 +1,16 @@
 /**
- * Component Generator
+ * Container Generator
  */
-
-/* eslint strict: ["off"] */
-
-'use strict';
 
 const componentExists = require('../utils/componentExists');
 
 module.exports = {
-  description: 'Add an unconnected component',
+  description: 'Add a container component',
   prompts: [{
     type: 'input',
     name: 'name',
     message: 'What should it be called?',
-    default: 'Button',
+    default: 'Form',
     validate: (value) => {
       if ((/.+/).test(value)) {
         return componentExists(value) ? 'A component or container with this name already exists' : true;
@@ -25,12 +21,10 @@ module.exports = {
   }],
   actions: (data) => {
     // Generate index.js and index.test.js
-    let componentTemplate = './component/es6.pure.js.hbs';
-
     const actions = [{
       type: 'add',
-      path: '../../app/components/{{properCase name}}/index.js',
-      templateFile: componentTemplate,
+      path: '../../app/containers/{{properCase name}}/index.js',
+      templateFile: './container/index.js.hbs',
       abortOnFail: true,
     }];
 
