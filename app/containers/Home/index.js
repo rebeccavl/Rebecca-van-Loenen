@@ -8,6 +8,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Responsive from 'react-responsive';
 import {Link} from "react-router";
+import NavBar from "components/NavBar";
+import Footer from "components/Footer";
+import Notification from "material-ui/svg-icons/notification/live-tv";
 export default class Home extends React.PureComponent {
   render() {
     const column1={
@@ -39,7 +42,7 @@ export default class Home extends React.PureComponent {
                    height:"auto",
                    background:"#009976"
                    }
-      const column2m={
+    const column2m={
                    width:"100%",
                    height:"auto",
                    background:"#009976"
@@ -153,22 +156,6 @@ const animationStylem={
                       width:"100%",
                       height:"60%"
                       }
-       const navStyle={
-                      margin:"0",
-                      padding:"10px",
-                      width:"100%",
-                      fontFamily:"Open Sans",
-                      borderTop:"2px solid #000000",
-                      borderBottom:"1px solid #000000",
-                      textAlign:"center",
-                      }
-      const linkStyle={
-                      textDecoration:"none",
-                      color:"#000000",
-                      fontSize:"2em",
-                      fontVariant:"small-caps",
-                      textAlign:"center"
-                      }
     const mobileStyle={
                       height:"500px",
                       width:"100%",
@@ -179,15 +166,7 @@ const animationStylem={
       <div>
 
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
-
-        <header>
-          <nav style={navStyle}>
-            <Link style={linkStyle} to= "/"> Home </Link>
-            <Link style={linkStyle} to= "/About"> About </Link>
-          </nav>
-        </header>
-
-
+        <NavBar/>
          <Responsive minDeviceWidth={1024}>
           <main style={mainStyle}>
             <div style={column1}>
@@ -203,7 +182,7 @@ const animationStylem={
             </div>
             <div style={column2}>
               <div style={boxStyle2}>
-                <div style={titleStyle3}>Grow old along with me!<br/>
+                <div style={titleStyle3}>Grow old along with me.<br/>
                  The best is yet to be.
                 </div>
               </div>
@@ -234,11 +213,11 @@ const animationStylem={
                 <img style={animationStylem} src="https://media.giphy.com/media/3o7qE4p0MDWCMWs52M/giphy.gif"/>
             </div>
           </main>
+          <Footer/>
         </Responsive>
 
 
-        <footer>
-        </footer>
+
       </div>
     );
   }
