@@ -64,7 +64,7 @@ export default class Home extends React.PureComponent {
     const mainStyle={
                     display: "flex",
                     flexDirection: "row",
-                    background: "#0000ff"
+                    background: "#0000ff",
                     }
     const postStyle={
                      width:"100%",
@@ -118,35 +118,41 @@ export default class Home extends React.PureComponent {
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
                       fontSize:"4em",
+                      fontVariant:"small-caps",
                       paddingTop:"300px"
                       }
     const titleStylem={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
                       fontSize:"1em",
+                      fontVariant:"small-caps",
                       paddingTop:"50%"
                       }
     const titleStyle2={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
-                      fontSize:"1em"
+                      fontSize:"1em",
+                      fontVariant:"small-caps",
                       }
     const titleStyle2m={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
-                      fontSize:".5em"
+                      fontSize:".5em",
+                      fontVariant:"small-caps",
                       }
     const titleStyle3={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
                       fontSize:"4em",
-                      paddingTop:"80px"
+                      paddingTop:"80px",
+                      fontVariant:"small-caps",
                       }
    const titleStyle3m={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
                       fontSize:"1.5em",
-                      paddingTop:"0"
+                      paddingTop:"0",
+                      fontVariant:"small-caps",
                       }
  const animationStyle={
                       width:"100%",
@@ -154,16 +160,24 @@ export default class Home extends React.PureComponent {
                       }
 const animationStylem={
                       width:"100%",
-                      height:"60%"
+                      height:"5%"
                       }
     const mobileStyle={
-                      height:"500px",
                       width:"100%",
                       display:"flex",
                       flexDirection:"column",
                       }
+        const overall={
+                      display: "flex",
+                      flexDirection:"column",
+                      justifyContent:"space-between"
+                      }
+        const fStyle={
+                      alignItems:"flex-end"
+                      }
+
     return (
-      <div>
+      <div style={overall}>
 
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
         <NavBar/>
@@ -213,8 +227,8 @@ const animationStylem={
                 <img style={animationStylem} src="https://media.giphy.com/media/3o7qE4p0MDWCMWs52M/giphy.gif"/>
             </div>
           </main>
-          <Footer/>
         </Responsive>
+        <Footer/>
 
 
 

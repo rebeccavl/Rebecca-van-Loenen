@@ -4,37 +4,79 @@
  *
  */
 
-import React from 'react';
+import React from "react";
 import NavBar from "components/NavBar";
 import Footer from "components/Footer";
-import Helmet from 'react-helmet';
+import Helmet from "react-helmet";
 import {Link} from "react-router";
 export default class About extends React.PureComponent {
-  render() {
-
-    const mainStyle={
-                    display: "flex",
-                    flexDirection: "column"
-                    }
-    const rowStyle1={
-                    width:"100%",
-                    height:"600px",
-                    background:"#A9DFBF",
-                    backgroundSize:"contain"
-                    }
+  constructor(props){
+      super(props);
+      this.state={
+        infoHover:false
+      }
+    }
+    enterHover = () => {
+      this.setState({
+        infoHover:true
+      })
+    }
+    leaveHover = () => {
+      this.setState({
+        infoHover:false
+      })
+  }
+    showInfo = () => {
     const boxStyle1={
                     width:"50%",
-                    height:"50%",
-                    background:"rgba(244,200,200,0.50)",
-                    transition:"width 3s ease-out",
+                    height:"75%",
+                    background:"#d4efdf",
+                    opacity:".5"
+
                     }
+    const aniBox= {
+                  width: "100vw",
+                  transition:"all 3s ease",
+                  height:"100%",
+                  background:"#d4efdf",
+                  opacity:".5"
+    }
     const titleStyle1={
                     fontFamily:"Open Sans",
                     fontStyle:"normal",
                     fontSize:"4em",
+                    fontVariant:"small-caps",
                     paddingTop:"300px",
                     color:"#ffffff"
                     }
+    if(this.state.infoHover == true){
+      return (
+        <div style={aniBox} onMouseLeave = {this.leaveHover}>
+          <div style={titleStyle1}> Who we are </div>
+        </div>
+      )
+    }
+    else if (this.state.infoHover == false){
+      return (
+        <div style={boxStyle1} onMouseEnter = {this.enterHover}>
+          <div style={titleStyle1}> Who we are </div>
+        </div>
+      )
+    }
+  }
+  render() {
+
+    const mainStyle={
+                    display: "flex",
+                    flexDirection: "row"
+                    }
+    const rowStyle1={
+                    width:"100%",
+                    height:"800px",
+                    background:"url(http://h4z.it/Image/9ebecb_xxl_84931926.jpg)",
+                    backgroundSize:"100% 100%"
+                    }
+
 
 
     return (
@@ -45,9 +87,7 @@ export default class About extends React.PureComponent {
         <NavBar/>
         <main style={mainStyle}>
           <div style={rowStyle1}>
-            <div style={boxStyle1}>
-              <div style={titleStyle1}> Who we are </div>
-            </div>
+            {this.showInfo()}
           </div>
 
         </main>

@@ -16,21 +16,23 @@ class Footer extends React.PureComponent {
                     height:"100px",
                     background:"#000000",
                     backgroundSize:"cover",
-                    borderTop:"3px dotted #ffffff"
+                    borderTop:"3px dotted #ffffff",
+                    textAlign:"center",
+                    cursor:"pointer"
                     }
   const titleStyle2={
                     fontFamily:"Open Sans",
                     fontStyle:"normal",
                     fontSize:".5em",
+                    fontVariant:"small-caps",
                     color:"#ffffff",
-                    paddiingRight:"70px"
                     }
     return (
       <div style={rowStyle2}>
         <IconButton tooltip="SVG Icon">
           <Notification color="#ffffff"/>
         </IconButton>
-      <div style={titleStyle2}> Subscribe <br/> to our <br/> YouTube </div>
+        <div style={titleStyle2}> Subscribe <br/> to our <br/> YouTube </div>
       </div>
     );
   }
