@@ -12,6 +12,7 @@ import NavBar from "components/NavBar";
 import Footer from "components/Footer";
 import Notification from "material-ui/svg-icons/notification/live-tv";
 export default class Home extends React.PureComponent {
+
   render() {
     const column1={
                    width:"60%",
@@ -180,7 +181,7 @@ const animationStylem={
       <div style={overall}>
 
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
-        <NavBar/>
+        <NavBar page="Home"/>
          <Responsive minDeviceWidth={1024}>
           <main style={mainStyle}>
             <div style={column1}>

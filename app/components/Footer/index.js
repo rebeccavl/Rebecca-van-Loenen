@@ -13,10 +13,10 @@ class Footer extends React.PureComponent {
   render() {
     const rowStyle2={
                     width:"100%",
-                    height:"100px",
+                    height:"80px",
                     background:"#000000",
                     backgroundSize:"cover",
-                    borderTop:"3px dotted #ffffff",
+                    borderTop:"3px solid #ffffff",
                     textAlign:"center",
                     cursor:"pointer"
                     }
@@ -29,10 +29,10 @@ class Footer extends React.PureComponent {
                     }
     return (
       <div style={rowStyle2}>
-        <IconButton tooltip="SVG Icon">
+        <IconButton tooltip="Subscribe">
           <Notification color="#ffffff"/>
         </IconButton>
-        <div style={titleStyle2}> Subscribe <br/> to our <br/> YouTube </div>
+        <div style={titleStyle2}> Subscribe to our YouTube </div>
       </div>
     );
   }
