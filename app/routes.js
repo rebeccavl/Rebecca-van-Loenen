@@ -33,6 +33,15 @@ export default function createRoutes() {
       },
     },
     {
+      path: '/Blog',
+      name: 'Blog',
+      getComponent(nextState, cb) {
+        import('containers/Blog')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    },
+    {
     path: '*',
     name: 'notfound',
     getComponent(nextState, cb) {

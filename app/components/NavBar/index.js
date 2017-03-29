@@ -55,6 +55,7 @@ class NavBar extends React.PureComponent {
         <nav style={nav}>
           <Link style={linkStyle} to= "/"> Home </Link>
           <Link style={linkStyle} to= "/About"> About </Link>
+          <Link style={linkStyle} to= "/Blog"> Blog </Link>
         </nav>
       )
     }
@@ -72,7 +73,7 @@ class NavBar extends React.PureComponent {
     const linkStyle={
                      textDecoration:"none",
                      color:"#000000",
-                     fontSize:"2em",
+                     fontSize:"1.5em",
                      fontVariant:"small-caps",
                      textAlign:"center"
                      }
@@ -80,13 +81,17 @@ class NavBar extends React.PureComponent {
                       color:"#000000",
                       fontSize:"2em",
                       fontVariant:"small-caps",
-                      textAlign:"center"
+                      textAlign:"center",
+                      fontWeight:"bold",
+                      textDecoration:"none"
+
   }
     if(this.props.page == "Home"){
       return(
         <nav style={navStyle}>
           <Link style={activeStyle} to= "/"> Home </Link>
           <Link style={linkStyle} to= "/About"> About </Link>
+          <Link style={linkStyle} to= "/Blog"> Blog </Link>
         </nav>
       )
     }
@@ -95,6 +100,16 @@ class NavBar extends React.PureComponent {
        <nav style={navStyle}>
          <Link style={linkStyle} to= "/"> Home </Link>
          <Link style={activeStyle} to= "/About"> About </Link>
+         <Link style={linkStyle} to= "/Blog"> Blog </Link>
+       </nav>
+     )
+    }
+    else if (this.props.page == "Blog") {
+     return(
+       <nav style={navStyle}>
+         <Link style={linkStyle} to= "/"> Home </Link>
+         <Link style={linkStyle} to= "/About"> About </Link>
+         <Link style={activeStyle} to= "/Blog"> Blog </Link>
        </nav>
      )
     }

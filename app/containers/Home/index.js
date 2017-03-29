@@ -12,48 +12,85 @@ import NavBar from "components/NavBar";
 import Footer from "components/Footer";
 import Notification from "material-ui/svg-icons/notification/live-tv";
 export default class Home extends React.PureComponent {
+  constructor(props){
+    super(props);
+    this.state={
+      articles:[
+        {
+          image:"http://h4z.it/Image/b8e6a3_hansnbecca.jpg",
+          title:"West Coast",
+          body:"Exploring Oregon",
+        },
+        {
+          image:"http://h4z.it/Image/9ebecb_xxl_84931926.jpg",
+          title:"East Coast",
+          body:"Hello Mountains!",
+        },
+        {
+          image:"http://h4z.it/Image/9ebecb_xxl_84931926.jpg",
+          title:"Georgia On My Mind",
+          body:"Our Cookout on the lake",
+        },
+      ]
+    }
+  }
 
   render() {
     const column1={
-                   width:"60%",
+                   width:"100%",
                    height:"auto",
                    textAlign:"center",
                    color:"#ffffff",
+                   background:"#ffffff",
+
                    }
      const column1m={
                    width:"100%",
-                   height:"auto",
+                   height:"400px",
                    textAlign:"center",
-                   color:"#ffffff",
+                   color:"#000000",
                    }
         const box1={
-                   width:"100%",
+                   width:"95%",
                    height:"700px",
                    background:"url(http://h4z.it/Image/b8e6a3_hansnbecca.jpg)",
                    backgroundSize:"cover",
+                   margin:"30px 30px",
                    }
        const box1m={
                    width:"100%",
                    height:"50%",
                    background:"url(http://h4z.it/Image/b8e6a3_hansnbecca.jpg)",
                    backgroundSize:"contain",
+                   opacity:"0.9"
+
                   }
      const column2={
-                   width:"40%",
+                   width:"100%",
                    height:"auto",
-                   background:"#009976"
+                   background:"#ffffff",
+                   display: "flex",
+                   flexDirection:"row"
                    }
     const column2m={
                    width:"100%",
                    height:"auto",
                    background:"#009976"
                    }
+    const column3={
+                   width:"100%",
+                   height:"auto",
+                   background:"#ffffff",
+                   display: "flex",
+                   flexDirection:"row"
+                   }
     const boxStyle2={
-                    width:"100%",
-                    height:"400px",
+                    width:"50%",
+                    height:"300px",
                     background: "#000000",
                     color:"#ffffff",
-                    textAlign:"center"
+                    textAlign:"center",
+                    margin:"30px"
                     }
     const boxStyle2m={
                     width:"100%",
@@ -64,57 +101,29 @@ export default class Home extends React.PureComponent {
                     }
     const mainStyle={
                     display: "flex",
-                    flexDirection: "row",
+                    flexDirection: "column",
                     background: "#0000ff",
                     }
     const postStyle={
-                     width:"100%",
-                     height:"100px",
+                     width:"34%",
+                     height:"400px",
                      background:"#d4efdf",
                      textAlign:"left justify",
-                     textIndent:"10px",
-                     color:"#000000"
+                     textIndent:"5px",
+                     color:"#000000",
+                     margin:"30px",
+                     boxShadow:"2px 4px 10px #000000"
                      }
      const postStylem={
-                      width:"100%",
-                      height:"16.7%",
+                      width:"98%",
+                      height:"15%",
                       background:"#d4efdf",
                       textAlign:"center",
                       textIndent:"10px",
-                      color:"#000000"
+                      color:"#000000",
+                      margin:"3px",
+                      boxShadow:"1px 2px 5px #000000"
                       }
-    const postStyle2={
-                      width:"100%",
-                      height:"100px",
-                      background:"#A9DFBF",
-                      textAlign:"left justify",
-                      textIndent:"10px",
-                      color:"#000000"
-                      }
-    const postStyle2m={
-                      width:"100%",
-                      height:"16.7%",
-                      background:"#A9DFBF",
-                      textAlign:"left justify",
-                      textIndent:"10px",
-                      color:"#000000"
-                      }
-     const postStyle3={
-                      width:"100%",
-                      height:"100px",
-                      background:"#7DCEA0",
-                      textAlign:"left justify",
-                      textIndent:"10px",
-                      color:"#000000"
-                      }
-    const postStyle3m={
-                     width:"100%",
-                     height:"16.7%",
-                     background:"#7DCEA0",
-                     textAlign:"left justify",
-                     textIndent:"10px",
-                     color:"#000000"
-                     }
     const titleStyle={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
@@ -125,15 +134,17 @@ export default class Home extends React.PureComponent {
     const titleStylem={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
-                      fontSize:"1em",
+                      fontSize:"1.5em",
                       fontVariant:"small-caps",
-                      paddingTop:"50%"
+                      paddingTop:"30%"
                       }
     const titleStyle2={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
-                      fontSize:"1em",
+                      fontSize:"2em",
                       fontVariant:"small-caps",
+                      textAlign:"center",
+                      padding:"20%"
                       }
     const titleStyle2m={
                       fontFamily:"Open Sans",
@@ -144,7 +155,7 @@ export default class Home extends React.PureComponent {
     const titleStyle3={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
-                      fontSize:"4em",
+                      fontSize:"2em",
                       paddingTop:"80px",
                       fontVariant:"small-caps",
                       }
@@ -155,9 +166,19 @@ export default class Home extends React.PureComponent {
                       paddingTop:"0",
                       fontVariant:"small-caps",
                       }
+    const titleStyle4={
+                      fontFamily:"Open Sans",
+                      fontStyle:"normal",
+                      fontSize:"1.5em",
+                      paddingTop:"0",
+                      fontVariant:"small-caps",
+                      }
  const animationStyle={
-                      width:"100%",
-                      height:"600px"
+                      width:"50%",
+                      height:"300px",
+                      background:"url(https://media.giphy.com/media/3o7qE4p0MDWCMWs52M/giphy.gif)",
+                      backgroundSize:"100% 100%",
+                      margin:"30px",
                       }
 const animationStylem={
                       width:"100%",
@@ -182,26 +203,32 @@ const animationStylem={
 
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
         <NavBar page="Home"/>
-         <Responsive minDeviceWidth={1024}>
+        <Responsive minDeviceWidth={1024}>
           <main style={mainStyle}>
             <div style={column1}>
-                <div style={box1}>
-                  <div style={titleStyle}>Hans & Becca | In The Wild</div>
-              </div>
-              <div style={postStyle}>
-                <div style={titleStyle2}>Daily Wild | Post 1
-                  <p/>Today we experienced the Redwoods of Northern California. These huge trees stretching as far up as the eye can see are quite the site to see!
-                </div></div>
-                <div style={postStyle2}><div style={titleStyle2}>Daily Wild | Post 2...</div></div>
-                <div style={postStyle3}><div style={titleStyle2}>Daily Wild | Post 3...</div></div>
-            </div>
-            <div style={column2}>
-              <div style={boxStyle2}>
-                <div style={titleStyle3}>Grow old along with me.<br/>
-                 The best is yet to be.
+              <div style={box1}>
+                <div style={titleStyle}>Hans & Becca | In The Wild
+                </div>
+                <div style={titleStyle4}>a blog about our adventures near and far
                 </div>
               </div>
-                <img style={animationStyle} src="https://media.giphy.com/media/3o7qE4p0MDWCMWs52M/giphy.gif"/>
+            </div>
+            <div style={column2}>
+            {this.state.articles.map((article,i) => (
+              <div style={postStyle}>
+                <div style={titleStyle2}>{article.title} | {article.body}
+                </div>
+              </div>
+            ))}
+            </div>
+            <div style={column3}>
+              <div style={boxStyle2}>
+                <div style={titleStyle3}>Grow old along with me.<br/>
+                  The best is yet to be.
+                </div>
+              </div>
+              <div style={animationStyle}>
+              </div>
             </div>
           </main>
         </Responsive>
@@ -212,13 +239,13 @@ const animationStylem={
                 <div style={box1m}>
                   <div style={titleStylem}>Hans & Becca | In The Wild</div>
               </div>
-              <div style={postStylem}>
-                <div style={titleStyle2m}>Daily Wild | Post 1
-                  <p/>Today we experienced the Redwoods of Northern California. These huge trees stretching as far up as the eye can see are quite the site to see!
-                </div></div>
-                <div style={postStyle2m}><div style={titleStyle2m}>Daily Wild | Post 2...</div></div>
-                <div style={postStyle3m}><div style={titleStyle2m}>Daily Wild | Post 3...</div></div>
-            </div>
+              {this.state.articles.map((article,i) => (
+                <div style={postStylem}>
+                  <div style={titleStyle2m}>{article.title} | {article.body}
+                  </div>
+                </div>
+              ))}
+              </div>
             <div style={column2m}>
               <div style={boxStyle2m}>
                 <div style={titleStyle3m}>Grow old along with me!<br/>
