@@ -49,24 +49,7 @@ export default class About extends React.PureComponent {
                     background:"#A9DFBF",
                     margin:"40px 60px 40px 60px"
                     }
-     const aniBoxm= {
-                    width: "95vw",
-                    transition:"all 1s linear",
-                    height:"80%",
-                    background:"#A9DFBF",
-                    margin:"40px 60px 40px 60px"
-                    }
   const titleStyle1={
-                    fontFamily:"Open Sans",
-                    fontStyle:"normal",
-                    fontSize:"2em",
-                    fontVariant:"small-caps",
-                    paddingTop:"10%",
-                    margin:"20px 20px",
-                    color:"#ffffff",
-                    textAlign:"center"
-                    }
-  const titleStyle1m={
                     fontFamily:"Open Sans",
                     fontStyle:"normal",
                     fontSize:"2em",
@@ -112,6 +95,22 @@ export default class About extends React.PureComponent {
                     background:"url(http://h4z.it/Image/9ebecb_xxl_84931926.jpg)",
                     backgroundSize:"100% 100%"
                     }
+     const aniBoxm= {
+                    height:"90%",
+                    background:"#A9DFBF",
+                    margin:"20px 20px",
+                    opacity:".8"
+                    }
+  const titleStyle1m={
+                     fontFamily:"Open Sans",
+                     fontStyle:"normal",
+                     fontSize:"1em",
+                     fontVariant:"small-caps",
+                     paddingTop:"10%",
+                     margin:"20px 20px",
+                     color:"#ffffff",
+                     textAlign:"center"
+                     }
     return (
 
       <div>
@@ -128,13 +127,18 @@ export default class About extends React.PureComponent {
 
         <Responsive maxDeviceWidth={1023}>
           <main style={mainStyle}>
-            <div style={rowStyle1}>
-              {this.showInfo()}
+            <div style= {rowStyle1m}>
+              <div style= {aniBoxm}>
+                <div style={titleStyle1m}>We are a fun and funky married couple who daily seek new adventures.
+                 <br/>Our 'Wild'may be near by or miles away.
+                 <br/> Our blog shows you snippets of the adventures we take together
+                </div>
               </div>
-            </main>
-          </Responsive>
+            </div>
+          </main>
+        </Responsive>
         <Footer/>
-      </div>
+        </div>
     );
   }
 }

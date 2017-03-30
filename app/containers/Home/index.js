@@ -173,6 +173,13 @@ export default class Home extends React.PureComponent {
                       paddingTop:"0",
                       fontVariant:"small-caps",
                       }
+    const titleStyle5={
+                      fontFamily:"Open Sans",
+                      fontStyle:"normal",
+                      fontSize:".5em",
+                      paddingTop:"0",
+                      fontVariant:"small-caps",
+                      }
  const animationStyle={
                       width:"50%",
                       height:"300px",
@@ -223,8 +230,8 @@ const animationStylem={
             </div>
             <div style={column3}>
               <div style={boxStyle2}>
-                <div style={titleStyle3}>Grow old along with me.<br/>
-                  The best is yet to be.
+                <div style={titleStyle3}>Not all who wonder are lost.
+                <div style={titleStyle5}> J.R.R. Tolkien</div>
                 </div>
               </div>
               <div style={animationStyle}>
@@ -248,8 +255,7 @@ const animationStylem={
               </div>
             <div style={column2m}>
               <div style={boxStyle2m}>
-                <div style={titleStyle3m}>Grow old along with me!<br/>
-                 The best is yet to be.
+                <div style={titleStyle3m}>Not all who wonder are lost.
                 </div>
               </div>
                 <img style={animationStylem} src="https://media.giphy.com/media/3o7qE4p0MDWCMWs52M/giphy.gif"/>
@@ -257,9 +263,6 @@ const animationStylem={
           </main>
         </Responsive>
         <Footer/>
-
-
-
       </div>
     );
   }

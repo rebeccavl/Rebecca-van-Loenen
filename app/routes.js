@@ -33,10 +33,10 @@ export default function createRoutes() {
       },
     },
     {
-      path: '/Blog',
-      name: 'Blog',
+      path: '/Dashboard',
+      name: 'Dashboard',
       getComponent(nextState, cb) {
-        import('containers/Blog')
+        import('containers/Dashboard')
           .then(loadModule(cb))
           .catch(errorLoading);
       },

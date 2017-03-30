@@ -61,8 +61,8 @@ const mainStyle={
                 }
     return (
       <div>
-        <Helmet title="Blog" meta={[ { name: 'description', content: 'Description of Blog' }]}/>
-        <NavBar page="Blog"/>
+        <Helmet title="Dashboard" meta={[ { name: 'description', content: 'Description of Blog' }]}/>
+        <NavBar page="Dashboard"/>
         <main style={mainStyle}>
         <input type="text" placeholder="title" value={this.state.title} onChange={this.handleTitle}
           input style={textStyle}/>
