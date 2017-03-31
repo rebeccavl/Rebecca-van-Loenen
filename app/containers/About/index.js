@@ -33,28 +33,28 @@ export default class About extends React.PureComponent {
                     height:"75%",
                     background:"#d4efdf",
                     opacity:".5",
-                    margin:"30px 100px 30px 100px"
+                    margin:"0 auto"
                     }
   const boxStyle1m={
                     width:"75%",
                     height:"75%",
                     background:"#d4efdf",
                     opacity:".5",
-                    margin:"30px 100px 30px 100px"
+                    margin:"auto 0"
                     }
      const aniBox= {
                     width: "95vw",
                     transition:"all 1s linear",
                     height:"80%",
                     background:"#A9DFBF",
-                    margin:"40px 60px 40px 60px"
+                    margin:"0 auto"
                     }
   const titleStyle1={
                     fontFamily:"Open Sans",
                     fontStyle:"normal",
                     fontSize:"2em",
                     fontVariant:"small-caps",
-                    paddingTop:"10%",
+                    paddingTop:"8%",
                     margin:"20px 20px",
                     color:"#ffffff",
                     textAlign:"center"
@@ -86,19 +86,20 @@ export default class About extends React.PureComponent {
     const rowStyle1={
                     width:"100%",
                     height:"800px",
-                    background:"url(http://h4z.it/Image/9ebecb_xxl_84931926.jpg)",
-                    backgroundSize:"100% 100%"
+                    background:"url(http://h4z.it/Image/09f9cc_18_26_39_Pro.jpg)",
+                    backgroundSize:"100% 100%",
+                    padding:"40px 40px"
                     }
   const rowStyle1m={
                     width:"100%",
                     height:"500px",
-                    background:"url(http://h4z.it/Image/9ebecb_xxl_84931926.jpg)",
+                    background:"url(http://h4z.it/Image/09f9cc_18_26_39_Pro.jpg)",
                     backgroundSize:"100% 100%"
                     }
      const aniBoxm= {
-                    height:"90%",
+                    height:"70%",
                     background:"#A9DFBF",
-                    margin:"20px 20px",
+                    margin:"80px 80px",
                     opacity:".8"
                     }
   const titleStyle1m={
