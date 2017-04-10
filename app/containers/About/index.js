@@ -17,6 +17,7 @@ export default class About extends React.PureComponent {
         infoHover:false
       }
     }
+    
     enterHover = () => {
       this.setState({
         infoHover:true

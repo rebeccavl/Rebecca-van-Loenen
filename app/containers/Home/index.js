@@ -15,26 +15,93 @@ export default class Home extends React.PureComponent {
   constructor(props){
     super(props);
     this.state={
+      infoHover:{index:null,hover:false},
+
       articles:[
         {
-          image:"http://h4z.it/Image/b8e6a3_hansnbecca.jpg",
           title:"West Coast",
           body:"Exploring Oregon",
         },
         {
-          image:"http://h4z.it/Image/9ebecb_xxl_84931926.jpg",
           title:"East Coast",
           body:"Hello Mountains!",
         },
         {
-          image:"http://h4z.it/Image/9ebecb_xxl_84931926.jpg",
           title:"Georgia On My Mind",
           body:"Our Cookout on the lake",
         },
       ]
     }
   }
+  enterHover = (index, event) => {
+    var hoverObject = {
+      index: index,
+      hover: true
+    }
+    this.setState({
+      infoHover:hoverObject
+    })
+    console.log(this.state.infoHover);
+  }
 
+  leaveHover = () => {
+    var hoverObject = {
+      index: null,
+      hover: false
+    }
+    this.setState({
+      infoHover:hoverObject
+    })
+  }
+    renderArticle = (article, index) =>{
+      const postStyle={
+                       width:"34%",
+                       height:"400px",
+                       background:"#d4efdf",
+                       textAlign:"left justify",
+                       textIndent:"5px",
+                       color:"#000000",
+                       margin:"30px",
+                       boxShadow:"2px 4px 10px #000000"
+                       }
+     const titleStyle2={
+                       fontFamily:"Open Sans",
+                       fontStyle:"normal",
+                       fontSize:"2em",
+                       fontVariant:"small-caps",
+                       textAlign:"center",
+                       padding:"20%"
+                       }
+  const aniPost= {
+    width:"36%",
+    height:"410px",
+    background:"#d4efdf",
+    textAlign:"left justify",
+    textIndent:"5px",
+    color:"#000000",
+    margin:"30px",
+    boxShadow:"2px 4px 10px #000000",
+    transition:"all 1s linear",
+  }
+
+  if(this.state.infoHover.index === index){
+    return(
+      <div style={aniPost} onMouseLeave = {this.leaveHover}>
+        <div style={titleStyle2}>{article.title} | {article.body}
+        </div>
+      </div>
+    )
+  }
+  else {
+    return(
+      <div style={postStyle} onMouseEnter = {(index, event) => this.enterHover(index, event)}>
+        <div style={titleStyle2}>{article.title} | {article.body}
+        </div>
+      </div>
+    )
+  }
+
+    }
   render() {
     const column1={
                    width:"100%",
@@ -104,16 +171,7 @@ export default class Home extends React.PureComponent {
                     flexDirection: "column",
                     background: "#0000ff",
                     }
-    const postStyle={
-                     width:"34%",
-                     height:"400px",
-                     background:"#d4efdf",
-                     textAlign:"left justify",
-                     textIndent:"5px",
-                     color:"#000000",
-                     margin:"30px",
-                     boxShadow:"2px 4px 10px #000000"
-                     }
+
      const postStylem={
                       width:"98%",
                       height:"15%",
@@ -138,14 +196,7 @@ export default class Home extends React.PureComponent {
                       fontVariant:"small-caps",
                       paddingTop:"30%"
                       }
-    const titleStyle2={
-                      fontFamily:"Open Sans",
-                      fontStyle:"normal",
-                      fontSize:"2em",
-                      fontVariant:"small-caps",
-                      textAlign:"center",
-                      padding:"20%"
-                      }
+
     const titleStyle2m={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
@@ -222,16 +273,13 @@ const animationStylem={
             </div>
             <div style={column2}>
             {this.state.articles.map((article,i) => (
-              <div style={postStyle}>
-                <div style={titleStyle2}>{article.title} | {article.body}
-                </div>
-              </div>
+              this.renderArticle(article,i)
             ))}
             </div>
             <div style={column3}>
               <div style={boxStyle2}>
                 <div style={titleStyle3}>Not all who wonder are lost.
-                <div style={titleStyle5}> J.R.R. Tolkien</div>
+                <div style={titleStyle5}> J.R.R. Tolkien></div>
                 </div>
               </div>
               <div style={animationStyle}>
