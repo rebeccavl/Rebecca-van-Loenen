@@ -33,7 +33,7 @@ export default class Home extends React.PureComponent {
       ]
     }
   }
-  enterHover = (index, event) => {
+  enterHover = (index) => {
     var hoverObject = {
       index: index,
       hover: true
@@ -72,17 +72,17 @@ export default class Home extends React.PureComponent {
                        textAlign:"center",
                        padding:"20%"
                        }
-  const aniPost= {
-    width:"36%",
-    height:"410px",
-    background:"#d4efdf",
-    textAlign:"left justify",
-    textIndent:"5px",
-    color:"#000000",
-    margin:"30px",
-    boxShadow:"2px 4px 10px #000000",
-    transition:"all 1s linear",
-  }
+        const aniPost= {
+                        width:"36%",
+                        height:"410px",
+                        background:"#d4efdf",
+                        textAlign:"left justify",
+                        textIndent:"5px",
+                        color:"#000000",
+                        margin:"30px",
+                        boxShadow:"2px 4px 10px #000000",
+                        transition:"all 1s linear",
+                        }
 
   if(this.state.infoHover.index === index){
     return(
@@ -94,7 +94,7 @@ export default class Home extends React.PureComponent {
   }
   else {
     return(
-      <div style={postStyle} onMouseEnter = {(index, event) => this.enterHover(index, event)}>
+      <div style={postStyle} onMouseEnter = {this.enterHover.bind(this,index)}>
         <div style={titleStyle2}>{article.title} | {article.body}
         </div>
       </div>
