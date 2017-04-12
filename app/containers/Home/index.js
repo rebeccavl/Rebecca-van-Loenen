@@ -17,21 +17,19 @@ export default class Home extends React.PureComponent {
     this.state={
       infoHover:{index:null,hover:false},
 
-      articles:[
-        {
-          title:"West Coast",
-          body:"Exploring Oregon",
-        },
-        {
-          title:"East Coast",
-          body:"Hello Mountains!",
-        },
-        {
-          title:"Georgia On My Mind",
-          body:"Our Cookout on the lake",
-        },
-      ]
+      articles:[]
     }
+  }
+  componentWillMount(){
+    fetch("http://localhost:8000/api/getArticles")
+    .then(function(res){
+      return res.json();
+    })
+    .then(function(json){
+      this.setState({
+        articles:json
+      })
+    }.bind(this))
   }
   enterHover = (index) => {
     var hoverObject = {
@@ -58,50 +56,73 @@ export default class Home extends React.PureComponent {
                        width:"34%",
                        height:"400px",
                        background:"#d4efdf",
-                       textAlign:"left justify",
+                       textAlign:"center",
                        textIndent:"5px",
                        color:"#000000",
                        margin:"30px",
                        boxShadow:"2px 4px 10px #000000"
                        }
+     const imageStyle={
+                       width:"100px",
+                       height:"100px",
+                       background:"url(http://h4z.it/Image/b8e6a3_hansnbecca.jpg)",
+                       backgroundSize:"5%",
+                       margin:"4%",
+                       border:"solid",
+                       borderColor:"#000000",
+
+                        }
      const titleStyle2={
                        fontFamily:"Open Sans",
                        fontStyle:"normal",
                        fontSize:"2em",
                        fontVariant:"small-caps",
                        textAlign:"center",
-                       padding:"20%"
+                       padding:".5%"
+                       }
+     const titleStyle6={
+                       fontFamily:"Open Sans",
+                       fontStyle:"normal",
+                       fontSize:"1.5em",
+                       fontVariant:"small-caps",
+                       textAlign:"center",
+                       padding:".5%"
                        }
         const aniPost= {
                         width:"36%",
-                        height:"410px",
+                        height:"430px",
                         background:"#d4efdf",
+                        display:"flex",
+                        flexDirection:"column",
                         textAlign:"left justify",
+                        alignItems:"center",
                         textIndent:"5px",
                         color:"#000000",
-                        margin:"30px",
-                        boxShadow:"2px 4px 10px #000000",
-                        transition:"all 1s linear",
+                        margin:"10px",
+                        boxShadow:"4px 8px 20px #000000",
+                        transition:"all .5s linear",
                         }
 
+//animates the blog posts
   if(this.state.infoHover.index === index){
     return(
       <div style={aniPost} onMouseLeave = {this.leaveHover}>
-        <div style={titleStyle2}>{article.title} | {article.body}
-        </div>
+        <img style= {imageStyle} img src={article.image}/>
+        <div style={titleStyle2}>{article.title} </div>
+        <div style={titleStyle6}>{article.body}</div>
       </div>
     )
   }
   else {
     return(
       <div style={postStyle} onMouseEnter = {this.enterHover.bind(this,index)}>
-        <div style={titleStyle2}>{article.title} | {article.body}
-        </div>
+        <img style={imageStyle} img src={article.image}/>
+        <div style={titleStyle2}>{article.title} </div>
+        <div style={titleStyle6}>{article.body}</div>
       </div>
     )
   }
-
-    }
+}
   render() {
     const column1={
                    width:"100%",
@@ -130,47 +151,46 @@ export default class Home extends React.PureComponent {
                    background:"url(http://h4z.it/Image/b8e6a3_hansnbecca.jpg)",
                    backgroundSize:"contain",
                    opacity:"0.9"
-
-                  }
+                   }
      const column2={
-                   width:"100%",
-                   height:"auto",
-                   background:"#ffffff",
-                   display: "flex",
-                   flexDirection:"row"
-                   }
-    const column2m={
-                   width:"100%",
-                   height:"auto",
-                   background:"#009976"
-                   }
-    const column3={
-                   width:"100%",
-                   height:"auto",
-                   background:"#ffffff",
-                   display: "flex",
-                   flexDirection:"row"
-                   }
-    const boxStyle2={
-                    width:"50%",
-                    height:"300px",
-                    background: "#000000",
-                    color:"#ffffff",
-                    textAlign:"center",
-                    margin:"30px"
-                    }
-    const boxStyle2m={
                     width:"100%",
-                    height:"40%",
-                    background:"#000000",
-                    color:"#ffffff",
-                    textAlign:"center"
-                    }
-    const mainStyle={
+                    height:"auto",
+                    background:"#ffffff",
                     display: "flex",
-                    flexDirection: "column",
-                    background: "#0000ff",
+                    flexDirection:"row"
                     }
+     const column2m={
+                     width:"100%",
+                     height:"auto",
+                     background:"#009976"
+                     }
+       const column3={
+                      width:"100%",
+                      height:"auto",
+                      background:"#ffffff",
+                      display: "flex",
+                      flexDirection:"row"
+                      }
+      const boxStyle2={
+                      width:"50%",
+                      height:"300px",
+                      background: "#000000",
+                      color:"#ffffff",
+                      textAlign:"center",
+                      margin:"30px"
+                      }
+    const boxStyle2m={
+                      width:"100%",
+                      height:"40%",
+                      background:"#000000",
+                      color:"#ffffff",
+                      textAlign:"center"
+                      }
+      const mainStyle={
+                      display: "flex",
+                      flexDirection: "column",
+                      background: "#0000ff",
+                      }
 
      const postStylem={
                       width:"98%",
@@ -259,7 +279,7 @@ const animationStylem={
     return (
       <div style={overall}>
 
-        <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
+        <Helmet title="Home" meta={[{ name: 'description', content: 'Description of Home' }]}/>
         <NavBar page="Home"/>
         <Responsive minDeviceWidth={1024}>
           <main style={mainStyle}>
