@@ -53,13 +53,17 @@ export default class Home extends React.PureComponent {
   }
     renderArticle = (article, index) =>{
       const postStyle={
-                       width:"34%",
+                       minWidth:"30%",
+                       maxWidth:"100%",
+                       display:"flex",
+                       flexDirection:"column",
                        height:"400px",
                        background:"#d4efdf",
                        textAlign:"center",
                        textIndent:"5px",
                        color:"#000000",
-                       margin:"30px",
+                       margin:"15px",
+                       alignItems:"center",
                        boxShadow:"2px 4px 10px #000000"
                        }
      const imageStyle={
@@ -89,7 +93,8 @@ export default class Home extends React.PureComponent {
                        padding:".5%"
                        }
         const aniPost= {
-                        width:"36%",
+                        minWidth:"33%",
+                        width:"102%",
                         height:"430px",
                         background:"#d4efdf",
                         display:"flex",
@@ -134,7 +139,7 @@ export default class Home extends React.PureComponent {
                    }
      const column1m={
                    width:"100%",
-                   height:"400px",
+                   height:"170px",
                    textAlign:"center",
                    color:"#000000",
                    }
@@ -146,23 +151,30 @@ export default class Home extends React.PureComponent {
                    margin:"30px 30px",
                    }
        const box1m={
-                   width:"100%",
-                   height:"50%",
+                   width:"83%",
+                   height:"150px",
                    background:"url(http://h4z.it/Image/b8e6a3_hansnbecca.jpg)",
                    backgroundSize:"contain",
-                   opacity:"0.9"
+                   opacity:"0.9",
+                   margin:"25px",
+                   alignItems:"center",
+                   boxShadow:"1px 2px 5px #000000"
                    }
      const column2={
                     width:"100%",
+                    maxWidth:"80%",
+                    margin:"0 auto",
                     height:"auto",
                     background:"#ffffff",
                     display: "flex",
-                    flexDirection:"row"
+                    flexDirection:"row",
+                    justifyContent:"space-around",
                     }
      const column2m={
                      width:"100%",
                      height:"auto",
-                     background:"#009976"
+                     display:"flex",
+                     flexDirection:"column",
                      }
        const column3={
                       width:"100%",
@@ -179,19 +191,17 @@ export default class Home extends React.PureComponent {
                       textAlign:"center",
                       margin:"30px"
                       }
-    const boxStyle2m={
+    const boxStyle2m={//
                       width:"100%",
-                      height:"40%",
-                      background:"#000000",
-                      color:"#ffffff",
+                      height:"60%",
+                      background:"#ffffff",
+                      color:"#000000",
                       textAlign:"center"
                       }
       const mainStyle={
                       display: "flex",
                       flexDirection: "column",
-                      background: "#0000ff",
                       }
-
      const postStylem={
                       width:"98%",
                       height:"15%",
@@ -202,21 +212,20 @@ export default class Home extends React.PureComponent {
                       margin:"3px",
                       boxShadow:"1px 2px 5px #000000"
                       }
-    const titleStyle={
-                      fontFamily:"Open Sans",
+    const titleStyle={//text for Hans and Becca graphic-box1
+                      fontFamily:"Lobster",
                       fontStyle:"normal",
-                      fontSize:"4em",
-                      fontVariant:"small-caps",
+                      fontSize:"4.5em",
                       paddingTop:"300px"
                       }
-    const titleStylem={
-                      fontFamily:"Open Sans",
+    const titleStylem={//text for Hans and Becca graphic-box1m
+                      fontFamily:"Lobster",
+                      fontWeight:"700",
                       fontStyle:"normal",
-                      fontSize:"1.5em",
-                      fontVariant:"small-caps",
-                      paddingTop:"30%"
+                      fontSize:"1.2em",
+                      paddingTop:"35%",
+                      color:"#ffffff"
                       }
-
     const titleStyle2m={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
@@ -224,18 +233,17 @@ export default class Home extends React.PureComponent {
                       fontVariant:"small-caps",
                       }
     const titleStyle3={
-                      fontFamily:"Open Sans",
+                      fontFamily:"Lobster",
                       fontStyle:"normal",
-                      fontSize:"2em",
+                      fontSize:"3em",
                       paddingTop:"80px",
-                      fontVariant:"small-caps",
                       }
-   const titleStyle3m={
-                      fontFamily:"Open Sans",
+   const titleStyle3m={//text for boxStyle2m. Not all who wander...
+                      fontFamily:"Lobster",
                       fontStyle:"normal",
                       fontSize:"1.5em",
                       paddingTop:"0",
-                      fontVariant:"small-caps",
+                      margin:"15px",
                       }
     const titleStyle4={
                       fontFamily:"Open Sans",
@@ -244,6 +252,14 @@ export default class Home extends React.PureComponent {
                       paddingTop:"0",
                       fontVariant:"small-caps",
                       }
+  const titleStyle4m={//text for ...JRR Tolkien
+                      fontFamily:"Open Sans",
+                      fontStyle:"normal",
+                      fontSize:".5em",
+                      paddingBottom:"3px",
+                      fontVariant:"small-caps",
+                      color:"#ffffff"
+                      }
     const titleStyle5={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
@@ -251,7 +267,14 @@ export default class Home extends React.PureComponent {
                       paddingTop:"0",
                       fontVariant:"small-caps",
                       }
- const animationStyle={
+  const titleStyle5m={
+                      fontFamily:"Open Sans",
+                      fontStyle:"normal",
+                      fontSize:".5em",
+                      paddingTop:"0",
+                      fontVariant:"small-caps",
+                      }
+ const animationStyle={//animation for blog posts
                       width:"50%",
                       height:"300px",
                       background:"url(https://media.giphy.com/media/3o7qE4p0MDWCMWs52M/giphy.gif)",
@@ -285,10 +308,8 @@ const animationStylem={
           <main style={mainStyle}>
             <div style={column1}>
               <div style={box1}>
-                <div style={titleStyle}>Hans & Becca | In The Wild
-                </div>
-                <div style={titleStyle4}>a blog about our adventures near and far
-                </div>
+                <div style={titleStyle}>Hans & Becca | In The Wild</div>
+                <div style={titleStyle4}>a blog about our adventures near and far</div>
               </div>
             </div>
             <div style={column2}>
@@ -298,8 +319,8 @@ const animationStylem={
             </div>
             <div style={column3}>
               <div style={boxStyle2}>
-                <div style={titleStyle3}>Not all who wonder are lost.
-                <div style={titleStyle5}> J.R.R. Tolkien></div>
+                <div style={titleStyle3}>Not all who wander are lost.
+                <div style={titleStyle5}> J.R.R. Tolkien</div>
                 </div>
               </div>
               <div style={animationStyle}>
@@ -311,22 +332,22 @@ const animationStylem={
         <Responsive maxDeviceWidth={1023}>
           <main style={mobileStyle}>
             <div style={column1m}>
-                <div style={box1m}>
-                  <div style={titleStylem}>Hans & Becca | In The Wild</div>
+              <div style={box1m}>
+                <div style={titleStylem}>Hans & Becca | In The Wild</div>
+                <div style={titleStyle4m}>a blog about our adventures near and far</div>
               </div>
+            </div>
+            <div style={column2m}>
               {this.state.articles.map((article,i) => (
-                <div style={postStylem}>
-                  <div style={titleStyle2m}>{article.title} | {article.body}
+                this.renderArticle(article,i)
+              ))}
+              <div style={boxStyle2m}>
+                <div style={titleStyle3m}>Not all who wander are lost.
+                  <div style={titleStyle5m}> J.R.R. Tolkien
                   </div>
                 </div>
-              ))}
-              </div>
-            <div style={column2m}>
-              <div style={boxStyle2m}>
-                <div style={titleStyle3m}>Not all who wonder are lost.
-                </div>
-              </div>
                 <img style={animationStylem} src="https://media.giphy.com/media/3o7qE4p0MDWCMWs52M/giphy.gif"/>
+              </div>
             </div>
           </main>
         </Responsive>

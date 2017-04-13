@@ -27,4 +27,7 @@ injectGlobal`
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
+  nav a:hover{
+    color: #A9DFBF!important;
+  }
 `;
