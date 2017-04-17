@@ -33,6 +33,15 @@ export default function createRoutes() {
       },
     },
     {
+      path: '/Posts/:id',
+      name: 'Single',
+      getComponent(nextState, cb) {
+        import('containers/Single')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    },
+    {
       path: '/Dashboard',
       name: 'Dashboard',
       getComponent(nextState, cb) {

@@ -91,6 +91,7 @@ class NavBar extends React.PureComponent {
         <nav style={navStyle}>
           <Link style={activeStyle} to= "/"> Home </Link>
           <Link style={linkStyle} to= "/About"> About </Link>
+          <Link style={linkStyle} to= "/Posts"> Posts </Link>
           <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
         </nav>
       )
@@ -112,6 +113,15 @@ class NavBar extends React.PureComponent {
          <Link style={activeStyle} to= "/Dashboard"> Dashboard </Link>
        </nav>
      )
+    }
+    else {
+      return(
+        <nav style={navStyle}>
+          <Link style={linkStyle} to= "/"> Home </Link>
+          <Link style={linkStyle} to= "/About"> About </Link>
+          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
+        </nav>
+      )
     }
   }
 

@@ -56,7 +56,7 @@ export default class Dashboard extends React.PureComponent {
     })
     .then(function(json){
       if(json.error){
-        alert("error");
+        alert(json.error);
       }
       else if (json.success) {
         alert(json.success);

@@ -111,20 +111,20 @@ export default class Home extends React.PureComponent {
 //animates the blog posts
   if(this.state.infoHover.index === index){
     return(
-      <div style={aniPost} onMouseLeave = {this.leaveHover}>
+      <Link to={`/Posts/${article.id}`} style={aniPost} onMouseLeave = {this.leaveHover}>
         <img style= {imageStyle} img src={article.image}/>
         <div style={titleStyle2}>{article.title} </div>
         <div style={titleStyle6}>{article.body}</div>
-      </div>
+      </Link>
     )
   }
   else {
     return(
-      <div style={postStyle} onMouseEnter = {this.enterHover.bind(this,index)}>
+      <Link to={`/Posts/${article.id}`} style={postStyle} onMouseEnter = {this.enterHover.bind(this,index)}>
         <img style={imageStyle} img src={article.image}/>
         <div style={titleStyle2}>{article.title} </div>
         <div style={titleStyle6}>{article.body}</div>
-      </div>
+      </Link>
     )
   }
 }
