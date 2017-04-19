@@ -55,6 +55,7 @@ class NavBar extends React.PureComponent {
         <nav style={nav}>
           <Link style={linkStyle} to= "/"> Home </Link>
           <Link style={linkStyle} to= "/About"> About </Link>
+          <Link style={linkStyle} to= "/SignUp"> SignUp </Link>
           <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
         </nav>
       )
@@ -91,7 +92,7 @@ class NavBar extends React.PureComponent {
         <nav style={navStyle}>
           <Link style={activeStyle} to= "/"> Home </Link>
           <Link style={linkStyle} to= "/About"> About </Link>
-          <Link style={linkStyle} to= "/Posts"> Posts </Link>
+          <Link style={linkStyle} to= "/SignUp"> SignUp </Link>
           <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
         </nav>
       )
@@ -101,6 +102,17 @@ class NavBar extends React.PureComponent {
        <nav style={navStyle}>
          <Link style={linkStyle} to= "/"> Home </Link>
          <Link style={activeStyle} to= "/About"> About </Link>
+         <Link style={linkStyle} to= "/SignUp"> SignUp </Link>
+         <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
+       </nav>
+     )
+    }
+    else if (this.props.page == "SignUp") {
+     return(
+       <nav style={navStyle}>
+         <Link style={linkStyle} to= "/"> Home </Link>
+         <Link style={linkStyle} to= "/About"> About </Link>
+         <Link style={activeStyle} to= "/SignUp"> SignUp </Link>
          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
        </nav>
      )
@@ -110,6 +122,7 @@ class NavBar extends React.PureComponent {
        <nav style={navStyle}>
          <Link style={linkStyle} to= "/"> Home </Link>
          <Link style={linkStyle} to= "/About"> About </Link>
+         <Link style={linkStyle} to= "/SignUp"> SignUp </Link>
          <Link style={activeStyle} to= "/Dashboard"> Dashboard </Link>
        </nav>
      )
@@ -119,6 +132,7 @@ class NavBar extends React.PureComponent {
         <nav style={navStyle}>
           <Link style={linkStyle} to= "/"> Home </Link>
           <Link style={linkStyle} to= "/About"> About </Link>
+          <Link style={linkStyle} to= "/SignUp"> SignUp </Link>
           <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
         </nav>
       )

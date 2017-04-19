@@ -30,4 +30,7 @@ injectGlobal`
   nav a:hover{
     color: #A9DFBF!important;
   }
-`;
+input:hover {
+  color: #A9DFBF!important;
+}
+`

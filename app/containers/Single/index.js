@@ -44,14 +44,14 @@ componentWillMount(){
                       background:"#d4efdf",
                       margin:"50px"
                       }
-const titleStyle={
-                  fontFamily:"Open Sans",
-                  fontStyle:"normal",
-                  fontSize:"1.5em",
-                  fontVariant:"small-caps",
-                  textAlign:"center",
-                  padding:".5%"
-                  }
+    const titleStyle={
+                      fontFamily:"Open Sans",
+                      fontStyle:"normal",
+                      fontSize:"2em",
+                      fontVariant:"small-caps",
+                      textAlign:"justifyLeft",
+                      padding:"2%"
+                      }
     const bodyStyle={
                       fontFamily:"Open Sans",
                       fontStyle:"normal",
@@ -60,15 +60,24 @@ const titleStyle={
                       textAlign:"center",
                       padding:".5%"
                       }
+        const iStyle={
+                      width:"100px",
+                      height:"100px",
+                      backgroundSize:"5%",
+                      margin:"4%",
+                      border:"solid",
+                      borderColor:"#000000"
+                     }
     return (
       <div>
         <Helmet title="Posts" meta={[ { name: 'description', content: 'Description of Single' }]}/>
         <NavBar page="Posts"/>
         <main style={mainStyle}>
           <div style={boxStyle}>
-            <div style={titleStyle}>{this.state.article.title}</div>
+            <div style={titleStyle}>
+              <img style={iStyle} img src={this.state.article.image}/>{this.state.article.title}
+            </div>
             <div style={bodyStyle}>{this.state.article.body}</div>
-            {this.state.article.image}
           </div>
         </main>
         <Footer/>

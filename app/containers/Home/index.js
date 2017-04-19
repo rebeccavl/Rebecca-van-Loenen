@@ -64,7 +64,8 @@ export default class Home extends React.PureComponent {
                        color:"#000000",
                        margin:"15px",
                        alignItems:"center",
-                       boxShadow:"2px 4px 10px #000000"
+                       boxShadow:"2px 4px 10px #000000",
+                       textDecoration:"none"
                        }
      const imageStyle={
                        width:"100px",

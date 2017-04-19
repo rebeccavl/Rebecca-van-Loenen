@@ -18,7 +18,9 @@ export default class Dashboard extends React.PureComponent {
       body:"",
       image:"",
       preview:"",
+      clicked:false
     }
+
   }
   handleTitle = (event) => {
     this.setState({
@@ -59,9 +61,12 @@ export default class Dashboard extends React.PureComponent {
         alert(json.error);
       }
       else if (json.success) {
+        this.setState({
+          clicked:true
+        })
         alert(json.success);
       }
-    })
+    }.bind(this))
   }
   render() {
 const titleStyle={
@@ -104,6 +109,18 @@ const submitStyle={
                 width:"100px",
                 border:"1px solid",
                 background:"#ffffff",
+                boxShadow:"1px 2px 10px #000000",
+                }
+const clickStyle={
+                fontFamily:"Open Sans",
+                fontSize:"1em",
+                paddingTop:"0",
+                fontVariant:"small-caps",
+                margin:"30px",
+                height:"50px",
+                width:"100px",
+                border:"1px solid",
+                background:"#808080",
                 boxShadow:"1px 2px 10px #000000",
                 }
 const previewStyle={
@@ -180,6 +197,11 @@ const mainStylem={
                 flexDirection:"column",
                 justifyContent:"space-between",
                 }
+
+    var submitButton=<input type="submit" style={submitStyle} onTouchTap={this.storeArticle}/>;
+    if(this.state.clicked === true){
+      submitButton = <input type="submit" style={clickStyle} onTouchTap={this.storeArticle}/>
+    }
     return (
       <div style={overall}>
         <Helmet title="Dashboard" meta={[ { name: 'description', content: 'Description of Blog' }]}/>
@@ -187,14 +209,13 @@ const mainStylem={
         <Responsive minDeviceWidth={1024}>
           <main style={mainStyle}>
           <input type="text" placeholder="title" value={this.state.title} onChange={this.handleTitle} style={titleStyle}/>
-
           <div>
             <textarea placeholder="body" value={this.state.body} onChange={this.handleBody} style={bodyStyle}></textarea>
           </div>
           <div>
             <input type="file" onChange={this.handleImage} style={fileStyle}/>
             <img style={previewStyle} src={this.state.preview}/>
-            <input type="submit" style={submitStyle} onTouchTap={this.storeArticle}/>
+            {submitButton}
           </div>
           </main>
         </Responsive>
