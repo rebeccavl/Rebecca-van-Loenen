@@ -35,7 +35,7 @@ storeSignIn = () => {
   var data = new FormData();
   data.append("email",this.state.email);
   data.append("password",this.state.password);
-  fetch("http://localhost:8000/api/storeArticle", {
+  fetch("http://localhost:8000/api/SignIn", {
     method:"post",
     body:data
   })
@@ -46,11 +46,16 @@ storeSignIn = () => {
     if(json.error){
       alert(json.error);
     }
-    else if (json.success) {
+
+    else if (json.token !== false) {
       this.setState({
         clicked:true
       })
-      alert(json.success);
+      sessionStorage.setItem('token',json.token);
+      alert('Welcome');
+    }
+    else if (json.token === false) {
+      alert('Invalid Credentials');
     }
   }.bind(this))
 }
