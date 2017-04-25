@@ -32,7 +32,7 @@ constructor (props){
  }
  handlePassword = (event) => {
    this.setState({
-     password:this.target.value
+     password:event.target.value
    })
  }
 
@@ -41,7 +41,7 @@ constructor (props){
    data.append("username",this.state.username);
    data.append("email",this.state.email);
    data.append("password",this.state.password);
-   fetch("http://localhost:8000/api/storeArticle", {
+   fetch("http://localhost:8000/api/SignUp", {
      method:"post",
      body:data
    })
@@ -117,7 +117,7 @@ constructor (props){
         <main style={mainStyle}>
         <input type="text" placeholder="username" value={this.state.username} onChange={this.handleUsername} style={userStyle}/>
         <input type="text" placeholder="password" value={this.state.password} onChange={this.handlePassword} style={passStyle}/>
-        <input type="text" placeholder="email" value={this.state.email} onChange={this.handleEmail}style={emailStyle}/>
+        <input type="text" placeholder="email" value={this.state.email} onChange={this.handleEmail} style={emailStyle}/>
         <input type="submit" style={submitStyle} onTouchTap={this.storeSignUp}/>
         </main>
         <Footer/>

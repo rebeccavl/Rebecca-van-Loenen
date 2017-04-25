@@ -19,7 +19,6 @@ constructor (props){
     commentBody:"",
     token:sessionStorage.getItem('token'),//gets the toekn of a logged-in user
     comments:[]
-
   }
 }
 componentWillMount(){
@@ -44,13 +43,15 @@ componentWillMount(){
   }.bind(this))
 }
 
-handleComment = (event) => {
+handleComment = (event) =>
+ {
   this.setState({
     commentBody: event.target.value
   })
 }
 
-storeComment = () => {
+storeComment = () =>
+{
   var data = new FormData();
   data.append("body",this.state.commentBody);
   data.append("articleID",this.props.params.id);
@@ -73,7 +74,6 @@ storeComment = () => {
       alert(json.success);
     }
   })
-
 }
 
   render() {

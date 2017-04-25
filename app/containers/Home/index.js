@@ -21,7 +21,7 @@ export default class Home extends React.PureComponent {
     }
   }
   componentWillMount(){
-    fetch("http://localhost:8000/api/getArticles")
+    fetch("http://localhost:8000/api/getArticles")//'fetching the article from the backend'
     .then(function(res){
       return res.json();
     })
@@ -75,8 +75,7 @@ export default class Home extends React.PureComponent {
                        margin:"4%",
                        border:"solid",
                        borderColor:"#000000",
-
-                        }
+                       }
      const titleStyle2={
                        fontFamily:"Open Sans",
                        fontStyle:"normal",
@@ -110,7 +109,8 @@ export default class Home extends React.PureComponent {
                         }
 
 //animates the blog posts
-  if(this.state.infoHover.index === index){
+  if(this.state.infoHover.index === index)
+  {
     return(
       <Link to={`/Posts/${article.id}`} style={aniPost} onMouseLeave = {this.leaveHover}>
         <img style= {imageStyle} img src={article.image}/>

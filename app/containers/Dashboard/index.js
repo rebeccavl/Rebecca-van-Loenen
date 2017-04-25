@@ -46,6 +46,7 @@ export default class Dashboard extends React.PureComponent {
     reader.readAsDataURL(file);
   }
   storeArticle = () => {
+    console.log(this.state.token);
     var data = new FormData();
     data.append("title",this.state.title);
     data.append("body",this.state.body);
