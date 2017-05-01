@@ -21,7 +21,7 @@ export default class Home extends React.PureComponent {
     }
   }
   componentWillMount(){
-    fetch("http://localhost:8000/api/getArticles")//'fetching the article from the backend'
+    fetch("http://thathashimottoslife.com/api/getArticles")//'fetching the article from the backend'
     .then(function(res){
       return res.json();
     })

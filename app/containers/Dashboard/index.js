@@ -51,7 +51,7 @@ export default class Dashboard extends React.PureComponent {
     data.append("title",this.state.title);
     data.append("body",this.state.body);
     data.append("image",this.state.image);
-    fetch("http://localhost:8000/api/storeArticle?token="+this.state.token, {
+    fetch("http://thathashimottoslife.com/api/storeArticle?token="+this.state.token, {
       method:"post",
       body:data
     })

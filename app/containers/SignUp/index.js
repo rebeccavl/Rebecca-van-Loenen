@@ -41,7 +41,7 @@ constructor (props){
    data.append("username",this.state.username);
    data.append("email",this.state.email);
    data.append("password",this.state.password);
-   fetch("http://localhost:8000/api/SignUp", {
+   fetch("http://thathashimottoslife.com/api/SignUp", {
      method:"post",
      body:data
    })

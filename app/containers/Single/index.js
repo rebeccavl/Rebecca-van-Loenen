@@ -55,7 +55,7 @@ storeComment = () =>
   var data = new FormData();
   data.append("body",this.state.commentBody);
   data.append("articleID",this.props.params.id);
-  fetch("http://localhost:8000/api/storeComment?token="+this.state.token,{
+  fetch("http://thathashimottoslife.com/api/storeComment?token="+this.state.token,{
     method:"post",
     body:data
   })
