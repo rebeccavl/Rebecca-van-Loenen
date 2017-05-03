@@ -53,7 +53,10 @@ export default class Dashboard extends React.PureComponent {
     data.append("image",this.state.image);
     fetch("http://thathashimottoslife.com/api/storeArticle?token="+this.state.token, {
       method:"post",
-      body:data
+      body:data,
+      headers:{
+        "Authorization":"Bearer "+this.state.token
+      }
     })
     .then(function(res){
       return res.json();

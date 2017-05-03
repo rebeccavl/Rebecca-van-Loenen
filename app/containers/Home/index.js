@@ -21,7 +21,7 @@ export default class Home extends React.PureComponent {
     }
   }
   componentWillMount(){
-    fetch("http://thathashimottoslife.com/api/getArticles")//'fetching the article from the backend'
+    fetch("http://http://thathashimottoslife.com/api/getArticles")//'fetching the article from the backend'
     .then(function(res){
       return res.json();
     })
@@ -79,7 +79,7 @@ export default class Home extends React.PureComponent {
      const titleStyle2={
                        fontFamily:"Open Sans",
                        fontStyle:"normal",
-                       fontSize:"2em",
+                       fontSize:"1em",
                        fontVariant:"small-caps",
                        textAlign:"center",
                        padding:".5%"
@@ -87,7 +87,7 @@ export default class Home extends React.PureComponent {
      const titleStyle6={
                        fontFamily:"Open Sans",
                        fontStyle:"normal",
-                       fontSize:"1.5em",
+                       fontSize:"1em",
                        fontVariant:"small-caps",
                        textAlign:"center",
                        padding:".5%"
@@ -334,7 +334,7 @@ const animationStylem={
           <main style={mobileStyle}>
             <div style={column1m}>
               <div style={box1m}>
-                <div style={titleStylem}>Hans & Becca | In The Wild</div>
+                <div style={titleStylem}>Hans & Becca | Into The Wild</div>
                 <div style={titleStyle4m}>a blog about our adventures near and far</div>
               </div>
             </div>

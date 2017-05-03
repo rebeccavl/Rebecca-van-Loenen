@@ -22,7 +22,7 @@ constructor (props){
   }
 }
 componentWillMount(){
-  fetch("http://localhost:8000/api/showArticle/"+this.props.params.id)//fetches the page articles
+  fetch("http://http://thathashimottoslife.com/api/showArticle/"+this.props.params.id)//fetches the page articles
   .then(function(res){
     return res.json();
   })
@@ -32,7 +32,7 @@ componentWillMount(){
     })
   }.bind(this))
 
-  fetch('http://localhost:8000/api/getComments/'+this.props.params.id)//fetches the page comments from the backend
+  fetch('http://http://thathashimottoslife.com/api/getComments/'+this.props.params.id)//fetches the page comments from the backend
   .then(function(res){
     return res.json();
   })
@@ -55,9 +55,12 @@ storeComment = () =>
   var data = new FormData();
   data.append("body",this.state.commentBody);
   data.append("articleID",this.props.params.id);
-  fetch("http://thathashimottoslife.com/api/storeComment?token="+this.state.token,{
+  fetch("http://http://thathashimottoslife.com/api/storeComment?token="+this.state.token,{
     method:"post",
-    body:data
+    body:data,
+    headers:{
+      "Authorization":"Bearer "+this.state.token
+    }
   })
 
   .then(function(res){
@@ -84,7 +87,7 @@ storeComment = () =>
                       }
     const boxStyle={
                       width:"75%",
-                      height:"600px",
+                      height:"900px",
                       background:"#d4efdf",
                       margin:"50px"
                       }

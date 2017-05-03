@@ -56,7 +56,7 @@ class NavBar extends React.PureComponent {
           <Link style={linkStyle} to= "/"> Home </Link>
           <Link style={linkStyle} to= "/About"> About </Link>
           <Link style={linkStyle} to= "/SignUp"> SignUp </Link>
-          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
+          <Link style={linkStyle} to= "/SignIn"> SignIn </Link>
         </nav>
       )
     }
@@ -93,7 +93,7 @@ class NavBar extends React.PureComponent {
           <Link style={activeStyle} to= "/"> Home </Link>
           <Link style={linkStyle} to= "/About"> About </Link>
           <Link style={linkStyle} to= "/SignUp"> SignUp </Link>
-          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
+          <Link style={linkStyle} to= "/SignIn"> SignIn </Link>
         </nav>
       )
     }
@@ -103,7 +103,7 @@ class NavBar extends React.PureComponent {
          <Link style={linkStyle} to= "/"> Home </Link>
          <Link style={activeStyle} to= "/About"> About </Link>
          <Link style={linkStyle} to= "/SignUp"> SignUp </Link>
-         <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
+         <Link style={linkStyle} to= "/SignIn"> SignIn </Link>
        </nav>
      )
     }
@@ -113,7 +113,7 @@ class NavBar extends React.PureComponent {
          <Link style={linkStyle} to= "/"> Home </Link>
          <Link style={linkStyle} to= "/About"> About </Link>
          <Link style={activeStyle} to= "/SignUp"> SignUp </Link>
-         <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
+         <Link style={linkStyle} to= "/SignIn"> SignIn </Link>
        </nav>
      )
     }
@@ -123,7 +123,7 @@ class NavBar extends React.PureComponent {
          <Link style={linkStyle} to= "/"> Home </Link>
          <Link style={linkStyle} to= "/About"> About </Link>
          <Link style={linkStyle} to= "/SignUp"> SignUp </Link>
-         <Link style={activeStyle} to= "/Dashboard"> Dashboard </Link>
+         <Link style={activeStyle} to= "/SignIn"> SignIn </Link>
        </nav>
      )
     }
@@ -133,7 +133,7 @@ class NavBar extends React.PureComponent {
           <Link style={linkStyle} to= "/"> Home </Link>
           <Link style={linkStyle} to= "/About"> About </Link>
           <Link style={linkStyle} to= "/SignUp"> SignUp </Link>
-          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
+          <Link style={linkStyle} to= "/SignIn"> SignIn </Link>
         </nav>
       )
     }
